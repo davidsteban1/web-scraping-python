@@ -26,4 +26,5 @@ jobs:
     - name: Run Price Monitor Script
       env:
         API_KEY: ${{ secrets.RESEND_API_KEY }}
+        EMAIL: ${{ secrets.RESEND_TO_EMAIL }}
       run: python main.py

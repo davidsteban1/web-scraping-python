@@ -4,8 +4,8 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-secret_key = os.getenv("API_KEY")
-email = os.getenv("EMAIL")
+secret_key = os.getenv("API_KEY", "")
+email = os.getenv("EMAIL", "")
 
 def alert(wanted_price):
     
