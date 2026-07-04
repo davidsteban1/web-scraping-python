@@ -1,0 +1,29 @@
+name: E-Commerce Price Monitor
+
+on:
+  schedule:
+    - cron: '0 12 * * *'
+  workflow_dispatch: 
+
+jobs:
+  run-scraper:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository code
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install requests beautifulsoup4 resend python-dotenv
+
+    - name: Run Price Monitor Script
+      env:
+        API_KEY: ${{ secrets.RESEND_API_KEY }}
+      run: python main.py
