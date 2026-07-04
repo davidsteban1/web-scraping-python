@@ -4,7 +4,8 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-secret_key = os.getenv("API_KEY","")
+secret_key = os.getenv("API_KEY")
+email = os.getenv("EMAIL")
 
 def alert(wanted_price):
     
@@ -12,7 +13,7 @@ def alert(wanted_price):
     
     r = resend.Emails.send({
         "from": "onboarding@resend.dev",
-        "to": "davidsst1@outlook.com",
+        "to": email,
         "subject": "SSD PRICE ALERT",
         "html": f" I have found the desirable {wanted_price} price for your SDD"
     })
