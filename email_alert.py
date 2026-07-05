@@ -13,7 +13,8 @@ def alert(wanted_price):
     with open("template.html", "r", encoding="utf-8") as file:
         html_template = file.read()
     
-    html_content = html_template.format(wanted_price=wanted_price)
+
+    html_content = html_template.replace("{wanted_price}", str(wanted_price))
 
     r = resend.Emails.send({
         "from": "onboarding@resend.dev",
