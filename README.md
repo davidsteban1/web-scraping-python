@@ -42,6 +42,7 @@ This project monitors product prices on e-commerce websites and sends an email a
 
 ## 🛠️ Customization
 To monitor a different product or store:
+
 • Update the target URL and CSS selectors inside `scraper.py` to match the new online store's structure.
 • (Optional) Update the destination link and store name inside `template.html` so the button in your modern Dark Mode email redirects to the new product page.
 
