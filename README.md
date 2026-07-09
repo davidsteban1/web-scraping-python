@@ -42,8 +42,7 @@ This project monitors product prices on e-commerce websites and sends an email a
 
 ## 🛠️ Customization
 To monitor a different product or store:
-- Update the target **URL** in `/home/runner/work/web-scraping-python/web-scraping-python/scraper.py`
-- Adjust the **CSS selectors / parsing logic** used to locate and extract the live price
-- (Optional) Update the product link and messaging in `/home/runner/work/web-scraping-python/web-scraping-python/template.html` for branded alerts
+• Update the target URL and CSS selectors inside `scraper.py` to match the new online store's structure.
+• (Optional) Update the destination link and store name inside `template.html` so the button in your modern Dark Mode email redirects to the new product page.
 
-Once updated, the same workflow will continue running automatically in GitHub Actions on schedule.
+Once committed and pushed, the GitHub Actions cloud workflow will automatically track your new product on the next scheduled run.
